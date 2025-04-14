@@ -1,6 +1,6 @@
 package jetbrains.kotlin.course.alias.team
 
-data class Team (override val id: Int ): IdentifierFactory(counter){
-    val point: Int = 0
-    val name: String = "Team#${id + 1}"
+data class Team(var id: Identifier, var point: Int){
+    var point: Int = 0
+    var name: String = "Team#${id + 1}"
 }

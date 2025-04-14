@@ -5,9 +5,10 @@ import org.w3c.dom.css.Counter
 typealias Identifier = Identifier(Int)
 
 class IdentifierFactory{
-    var counter: int = 0
+    var counter-: int = 0
 
-    fun UniqueIdentifier(): Int{
-        return counter += 1
+    fun UniqueIdentifier(counter: IdentifierFactory){
+        counter += 1
+        return counter
     }
 }

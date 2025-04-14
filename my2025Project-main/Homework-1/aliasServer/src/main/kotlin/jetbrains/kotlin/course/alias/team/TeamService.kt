@@ -4,15 +4,11 @@ import org.springframework.stereotype.Service
 import java.lang.Override
 
 @Service
-class TeamService(override val identifierFactory: Int): IdentifierFactory(Int) {
+class TeamService(var identifierFactory: IdentifierFactory) {
+    var identifierFactory = IdentifierFactory(counter)
     companion object{
-        fun newTeamService(identifierFactory: Int): TeamService{
-            val teamStorage = mutableMapOf("Team#${id + 1}")
-            return TeamService(identifierFactory)
-        }
+        var teamsStorage =(Identifier = Team): MutableMap<>
     }
-    fun generateTeamsForOneRound(teamsNumber: Int): List<Team> = teamStorage(){
-        val Team = identifierFactory()
-        return@teamStorage
-    }
+    fun generateTeamsForOneRound(teamsNumber:Int): List<Team> =
+        TeamService.identifierFactory(counter) -> teamsStorage<Team>
 }
